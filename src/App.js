@@ -67,6 +67,7 @@ class App extends Component {
       <p>{this.state.firstName}</p>
       <Camera
         idealFacingMode = {FACING_MODES.ENVIRONMENT}
+        isImageMirror = {false}
         isMaxResolution = {true}
       onTakePhoto={ (dataUri) => this.handleTakePhoto.bind(this,dataUri)
       }
