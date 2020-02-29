@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Camera from 'react-html5-camera-photo';
+import Camera, {FACING_MODES} from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 
 class App extends Component {
@@ -66,9 +66,11 @@ class App extends Component {
       </img>
       <p>{this.state.firstName}</p>
       <Camera
+        idealFacingMode = {FACING_MODES.ENVIRONMENT}
+        isMaxResolution = {true}
       onTakePhoto={ (dataUri) => this.handleTakePhoto.bind(this,dataUri)
-        
-        }
+      }
+     
     />
       </div>
     );
