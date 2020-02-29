@@ -20,9 +20,13 @@ class App extends Component {
 
     
     let driverData = window.doScan(document.querySelector('img'));
-    this.setState({
-      firstName:driverData.firstName
-    })
+
+    if(driverData !== undefined){
+      this.setState({
+        firstName:driverData.firstName
+      })
+    }
+    
 
     if(JSON.stringify(driverData) === '{}'){
       throw new Error('Error');
