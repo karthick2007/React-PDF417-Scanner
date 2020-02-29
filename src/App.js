@@ -18,8 +18,8 @@ class App extends Component {
 
   scan(){
 
-    
-    let driverData = window.doScan(document.querySelector('img'));
+    try{
+      let driverData = window.doScan(document.querySelector('img'));
 
     if(driverData !== undefined){
       this.setState({
@@ -31,8 +31,15 @@ class App extends Component {
     if(JSON.stringify(driverData) === '{}'){
       throw new Error('Error');
     }
+  }catch(err){
+    let errorElement = document.getElementById('error');
+    errorElement.innerHTML = "Error in scanning";
+    errorElement.style.display = 'inline';
+    errorElement.style.color = 'red';
+    }
 
-      }
+    }
+    
 
      handleFiles(event) {
        var file = event.target.files[0];
@@ -49,8 +56,7 @@ class App extends Component {
     this.setState({
       imgSrc:dataUri
     })
-    // Do stuff with the photo...
-    console.log(dataUri);
+    
   }
 
   render() {
@@ -64,7 +70,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <input type="file" id="myFile" onChange = {this.handleFiles.bind(this)}></input>
-        
+        <label id = "error" style = {{display:"none"}}></label>
       <img onLoad={this.scan.bind(this)} style={{display:'none'}} src = {this.state.imgSrc} alt = ''>
     
       </img>
@@ -73,7 +79,7 @@ class App extends Component {
         idealFacingMode = {FACING_MODES.ENVIRONMENT}
         isImageMirror = {false}
         isMaxResolution = {true}
-      onTakePhoto={ (dataUri) => this.handleTakePhoto.bind(this,dataUri)
+      onTakePhoto={ (dataUri) => this.handleTakePhoto(dataUri)
       }
      
     />
