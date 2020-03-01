@@ -77,7 +77,7 @@ class App extends Component {
         </p>
         <input type="file" id="myFile" onChange={this.handleFiles.bind(this)}></input>
         <label id="error" style={{ display: "none" }}></label>
-        <img onLoad={this.scan.bind(this)} style={{ display: 'none' }} src={this.state.imgSrc} alt=''>
+        <img onLoad={this.scan.bind(this)} style={{ display: 'block' }} src={this.state.imgSrc} alt=''>
 
         </img>
         <p>{this.state.firstName}</p>
@@ -103,7 +103,7 @@ class App extends Component {
         videoConstraints={videoConstraints}
         
         ref={this.setRef}
-        style={{ transform: 'rotate(90deg)' }}
+        style={{ transform: 'rotate(0deg)' }}
         
       />
       <button onClick={this.handleTakePhoto.bind(this)}>Capture photo</button>
