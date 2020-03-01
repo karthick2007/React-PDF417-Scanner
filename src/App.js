@@ -60,6 +60,11 @@ class App extends Component {
     
   }
   render() {
+    const videoConstraints = {
+      width: 1280,
+      height: 720,
+      facingMode: "environment"
+    };
     
     return (
       <div className="App">
@@ -92,12 +97,13 @@ class App extends Component {
          
          <Webcam
         audio={false}
-        height={150}
+        height={300}
         screenshotFormat="image/jpeg"
-        width={450}
+        width={200}
+        videoConstraints={videoConstraints}
         
         ref={this.setRef}
-        style={{ transform: 'rotate(90deg)' }}
+       
         
       />
       <button onClick={this.handleTakePhoto.bind(this)}>Capture photo</button>
