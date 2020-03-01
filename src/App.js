@@ -103,7 +103,7 @@ class App extends Component {
         videoConstraints={videoConstraints}
         
         ref={this.setRef}
-       
+        style={{ transform: 'rotate(90deg)' }}
         
       />
       <button onClick={this.handleTakePhoto.bind(this)}>Capture photo</button>
