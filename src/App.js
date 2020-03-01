@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
 import Camera, {FACING_MODES} from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
+import Webcam from "react-webcam";
 
 class App extends Component {
+
+
 
     state= {
       imgSrc : '',
@@ -33,6 +35,10 @@ class App extends Component {
         }
 
     }
+
+    setRef = webcam => {
+      this.webcam = webcam;
+    };
     
 
      handleFiles(event) {
@@ -45,15 +51,16 @@ class App extends Component {
      }
 
 
-   handleTakePhoto (dataUri) {
-
+   handleTakePhoto () {
+    let dataUri = this.webcam.getScreenshot();
+    console.log(dataUri);
     this.setState({
       imgSrc:dataUri
     })
     
   }
-
   render() {
+    
     return (
       <div className="App">
         <div className="App-header">
@@ -69,7 +76,7 @@ class App extends Component {
 
         </img>
         <p>{this.state.firstName}</p>
-        <div style = {{display:'flex',justifyContent:'space-between'}}>
+        {/* <div style = {{display:'flex',justifyContent:'space-between'}}>
         <button style = {{width:'150px'}}></button>
          <Camera 
           idealFacingMode={FACING_MODES.ENVIRONMENT}
@@ -81,10 +88,25 @@ class App extends Component {
           }/>
      <button style = {{width:'150px'}}></button>
          
-         </div>  
+         </div>   */}
+         
+         <Webcam
+        audio={false}
+        height={150}
+        screenshotFormat="image/jpeg"
+        width={450}
+        
+        ref={this.setRef}
+        style={{ transform: 'rotate(90deg)' }}
+        
+      />
+      <button onClick={this.handleTakePhoto.bind(this)}>Capture photo</button>
+        
       </div>
     );
   }
 }
+
+
 
 export default App;
