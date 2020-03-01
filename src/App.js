@@ -97,9 +97,9 @@ class App extends Component {
          
          <Webcam
         audio={false}
-        height={300}
+        height={720}
         screenshotFormat="image/jpeg"
-        width={200}
+        width={1028}
         videoConstraints={videoConstraints}
         
         ref={this.setRef}
