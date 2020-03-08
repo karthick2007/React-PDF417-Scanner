@@ -76,7 +76,7 @@ class App extends Component {
         </p>
         <input type="file" id="myFile" onChange={this.handleFiles.bind(this)}></input>
         <label id="error" style={{ display: "none" }}></label>
-        <img onLoad={this.scan.bind(this)} style={{ display: 'none' }} src={this.state.imgSrc} alt=''>
+        <img onLoad={this.scan.bind(this)} style={{ display: 'inline' }} src={this.state.imgSrc} alt=''>
 
         </img>
         <p>{this.state.firstName}</p>
@@ -87,10 +87,11 @@ class App extends Component {
           isImageMirror={false}
           isMaxResolution={true}
           isFullscreen = {false }
+          sizeFactor = {0.5}
           idealResolution = {{width: 1024, height: 720}}
           onTakePhoto={(dataUri) => this.handleTakePhoto(dataUri)
           }/>
-     <button style = {{width:'150px'}}></button>
+     <button style = {{width:'350px'}}></button>
          
          </div>  
          
