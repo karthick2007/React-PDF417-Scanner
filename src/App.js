@@ -51,8 +51,7 @@ class App extends Component {
      }
 
 
-   handleTakePhoto () {
-    let dataUri = this.webcam.getScreenshot();
+   handleTakePhoto (dataUri) {
     console.log(dataUri);
     this.setState({
       imgSrc:dataUri
