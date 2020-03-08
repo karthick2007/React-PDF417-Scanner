@@ -87,7 +87,7 @@ class App extends Component {
           isImageMirror={false}
           isMaxResolution={true}
           isFullscreen = {false }
-          sizeFactor = {0.5}
+          sizeFactor = {0.3}
           idealResolution = {{width: 1024, height: 720}}
           onTakePhoto={(dataUri) => this.handleTakePhoto(dataUri)
           }/>
