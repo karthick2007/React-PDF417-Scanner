@@ -9,7 +9,7 @@ class App extends Component {
 
     state= {
       imgSrc : '',
-      firstName:''
+      firstName :''
     }
 
   scan(){
@@ -78,7 +78,7 @@ class App extends Component {
         </p>
         <input type="file" id="myFile" onChange={this.handleFiles.bind(this)}></input>
         <label id="error" style={{ display: "none" }}></label>
-        <img onLoad={this.scan.bind(this)} style={{ display: 'block' }} src={this.state.imgSrc} alt=''>
+        <img onLoad={this.scan.bind(this)} style={{ display: 'none' }} src={this.state.imgSrc} alt=''>
 
         </img>
         <p>{this.state.firstName}</p>
@@ -98,8 +98,8 @@ class App extends Component {
          
          <Webcam
         audio={false}
-        width='160'
-        height='212'
+        width='1024'
+        height='720'
         screenshotFormat="image/jpeg"
         
         videoConstraints={videoConstraints}
