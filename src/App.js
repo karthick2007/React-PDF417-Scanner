@@ -9,7 +9,8 @@ class App extends Component {
 
     state= {
       imgSrc : '',
-      firstName :''
+      firstName :'',
+      lastName:'',
     }
 
   scan(){
@@ -20,7 +21,8 @@ class App extends Component {
             console.log(driverData);
             if(driverData !== undefined){
               this.setState({
-                firstName:driverData.firstName
+                firstName:driverData.firstName,
+                lastName: driverData.lastName
               })
             }
             
@@ -81,6 +83,7 @@ class App extends Component {
 
         </img>
         <p>{this.state.firstName}</p>
+        <p>{this.state.lastName}</p>
         <div style = {{display:'flex',justifyContent:'space-between'}}>
         <button style = {{width:'150px'}}></button>
          <Camera 
