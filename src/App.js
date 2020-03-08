@@ -15,6 +15,7 @@ class App extends Component {
   scan(){
 
         try{
+          errorElement.style.display = 'inline';
           let driverData = window.doScan(document.querySelector('img'));
             console.log(driverData);
             if(driverData !== undefined){
