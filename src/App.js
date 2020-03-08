@@ -16,7 +16,8 @@ class App extends Component {
 
         try{
           let driverData = window.doScan(document.querySelector('img'));
-
+          console.log(document.querySelector('img'));
+            console.log(driverData);
             if(driverData !== undefined){
               this.setState({
                 firstName:driverData.firstName
@@ -61,7 +62,7 @@ class App extends Component {
   }
   render() {
     const videoConstraints = {
-      width: 1280,
+      width: 1024,
       height: 720,
       facingMode: "environment"
     };
@@ -97,9 +98,10 @@ class App extends Component {
          
          <Webcam
         audio={false}
-        height={720}
+        width='160'
+        height='212'
         screenshotFormat="image/jpeg"
-        width={1028}
+        
         videoConstraints={videoConstraints}
         
         ref={this.setRef}
