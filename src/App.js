@@ -91,7 +91,7 @@ class App extends Component {
           idealResolution = {{width: 1024, height: 720}}
           onTakePhoto={(dataUri) => this.handleTakePhoto(dataUri)
           }/>
-     <button style = {{width:'350px'}}></button>
+     <button style = {{width:'150px'}}></button>
          
          </div>  
          
