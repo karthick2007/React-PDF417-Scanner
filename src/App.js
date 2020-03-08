@@ -16,7 +16,6 @@ class App extends Component {
 
         try{
           let driverData = window.doScan(document.querySelector('img'));
-          console.log(document.querySelector('img'));
             console.log(driverData);
             if(driverData !== undefined){
               this.setState({
@@ -82,21 +81,21 @@ class App extends Component {
 
         </img>
         <p>{this.state.firstName}</p>
-        {/* <div style = {{display:'flex',justifyContent:'space-between'}}>
+        <div style = {{display:'flex',justifyContent:'space-between'}}>
         <button style = {{width:'150px'}}></button>
          <Camera 
           idealFacingMode={FACING_MODES.ENVIRONMENT}
           isImageMirror={false}
           isMaxResolution={true}
           isFullscreen = {false }
-          idealResolution = {{width: 640, height: 480}}
+          idealResolution = {{width: 1024, height: 720}}
           onTakePhoto={(dataUri) => this.handleTakePhoto(dataUri)
           }/>
      <button style = {{width:'150px'}}></button>
          
-         </div>   */}
+         </div>  
          
-         <Webcam
+         {/* <Webcam
         audio={false}
         width='1024'
         height='720'
@@ -108,7 +107,7 @@ class App extends Component {
         style={{ transform: 'rotate(0deg)' }}
         
       />
-      <button onClick={this.handleTakePhoto.bind(this)}>Capture photo</button>
+      <button onClick={this.handleTakePhoto.bind(this)}>Capture photo</button> */}
         
       </div>
     );
