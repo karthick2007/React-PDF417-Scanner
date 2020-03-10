@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Camera, {FACING_MODES} from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import Webcam from "react-webcam";
+import MyCamera from './Camera/camera';
+import logo from './download.jpg'
 
 class App extends Component {
 
@@ -39,9 +41,9 @@ class App extends Component {
 
     }
 
-    setRef = webcam => {
-      this.webcam = webcam;
-    };
+    // setRef = webcam => {
+    //   this.webcam = webcam;
+    // };
     
 
      handleFiles(event) {
@@ -62,11 +64,11 @@ class App extends Component {
     
   }
   render() {
-    const videoConstraints = {
-      width: 1024,
-      height: 720,
-      facingMode: "environment"
-    };
+    // const videoConstraints = {
+    //   width: 1024,
+    //   height: 720,
+    //   facingMode: "environment"
+    // };
     
     return (
       <div className="App">
@@ -83,19 +85,22 @@ class App extends Component {
 
         </img>
         <p>{this.state.firstName}</p>
-        <p>{this.state.lastName}</p>
-        <div style = {{display:'flex',justifyContent:'space-between'}}>
-        <button style = {{width:'150px'}}></button>
-         <Camera 
+        <p>{this.state.lastName}</p >
+        <div style={{ position: 'relative',display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <svg style={{position: 'absolute', zIndex: '9999', width: '300',height: '200'}}>
+        <rect style={{ width: '100%',height: '80%', fill:'none', 'stroke-width': '5' , stroke: 'black' }}/>
+         </svg>
+         <Camera style={{width: '100%', height: '100%', position: 'absolute', zIndex: '9997' }}
+ 
           idealFacingMode={FACING_MODES.ENVIRONMENT}
           isImageMirror={false}
           isMaxResolution={true}
           isFullscreen = {false }
           sizeFactor = {0.5}
-          idealResolution = {{width: 1024, height: 720}}
+          idealResolution = {{width: 640, height: 480}}
           onTakePhoto={(dataUri) => this.handleTakePhoto(dataUri)
           }/>
-     <button style = {{width:'150px'}}></button>
+     
          
          </div>  
          
