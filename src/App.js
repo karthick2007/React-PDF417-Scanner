@@ -74,21 +74,17 @@ class App extends Component {
 
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <input type="file" id="myFile" onChange={this.handleFiles.bind(this)}></input>
         <label id="error" style={{ display: "none" }}></label>
         <img onLoad={this.scan.bind(this)} style={{ display: 'none' }} src={this.state.imgSrc} alt=''>
-
         </img>
         <p>{this.state.firstName}</p>
         <p>{this.state.lastName}</p >
-        <div style={{ position: 'relative',display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <svg style={{position: 'absolute', zIndex: '9999', width: '300',height: '200'}}>
+        <div style={{ position: 'relative',display: 'flex', justifyContent: 'center', alignItems: 'center',width:'75%',height:'50%' }}>
+              <svg style={{position: 'absolute', zIndex: '9999', width: '225',height: '150', justifyContent: 'center',alignItems: 'top'}}>
         <rect style={{ width: '100%',height: '80%', fill:'none', 'stroke-width': '5' , stroke: 'black' }}/>
          </svg>
-         <Camera style={{width: '100%', height: '100%', position: 'absolute', zIndex: '9997' }}
+         <Camera style={{ position: 'absolute',width:'50%' }}
  
           idealFacingMode={FACING_MODES.ENVIRONMENT}
           isImageMirror={false}
