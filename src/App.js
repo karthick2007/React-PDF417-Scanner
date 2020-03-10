@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Camera, {FACING_MODES} from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import Webcam from "react-webcam";
-import MyCamera from './Camera/camera';
 import logo from './download.jpg'
 
 class App extends Component {
