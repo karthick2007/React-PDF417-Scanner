@@ -80,12 +80,12 @@ class App extends Component {
         </img>
         <p>{this.state.firstName}</p>
         <p>{this.state.lastName}</p >
-        <div style={{ position: 'relative',display: 'flex', justifyContent: 'center', alignItems: 'flex-start',width:'75%',height:'50%' }}>
-        <svg style={{position: 'absolute', zIndex: '9999', width: '225',height: '150', justifyContent: 'center'}}>
-           <rect style={{ width: '100%',height: '80%', fill:'none', 'stroke-width': '5' , stroke: 'black' }}/>
+        <div style={{ position: 'relative',display: 'flex', justifyContent: 'center', alignItems: 'flex-start',width:'100%',height:'50%' }}>
+        <svg style={{position: 'absolute', zIndex: '9999', width: '350',height: '285', justifyContent: 'center'}}>
+           <rect style={{ width: '100%',height: '80%', fill:'none', 'stroke-width': '15' , stroke: 'grey' }}/>
          </svg>
          <Camera style={{ position: 'absolute',width:'50%' }}
- 
+
           idealFacingMode={FACING_MODES.ENVIRONMENT}
           isImageMirror={false}
           isMaxResolution={true}
