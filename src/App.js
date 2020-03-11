@@ -84,13 +84,13 @@ class App extends Component {
         <svg style={{position: 'absolute', zIndex: '9999', width: '350',height: '285', justifyContent: 'center'}}>
            <rect style={{ width: '100%',height: '80%', fill:'none', 'stroke-width': '15' , stroke: 'grey' }}/>
          </svg>
-         <Camera style={{ position: 'absolute',width:'50%' }}
+         <Camera style={{ position: 'absolute',width:'50%',opacity : '50%' }}
 
           idealFacingMode={FACING_MODES.ENVIRONMENT}
           isImageMirror={false}
           isMaxResolution={true}
           isFullscreen = {false }
-          sizeFactor = {0.3}
+          sizeFactor = {0.5}
           idealResolution = {{width: 1024, height: 720}}
           onTakePhoto={(dataUri) => this.handleTakePhoto(dataUri)
           }/>
