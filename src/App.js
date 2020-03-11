@@ -16,7 +16,7 @@ class App extends Component {
   scan(){
 
         try{
-          document.getElementById('error').style.display = 'inline';
+          document.getElementById('error').style.display = 'none';
           let driverData = window.doScan(document.querySelector('img'));
             console.log(driverData);
             if(driverData !== undefined){
@@ -76,7 +76,7 @@ class App extends Component {
         </div>
         <input type="file" id="myFile" onChange={this.handleFiles.bind(this)}></input>
         <label id="error" style={{ display: "none" }}></label>
-        <img onLoad={this.scan.bind(this)} style={{ display: 'block' }} src={this.state.imgSrc} alt=''>
+        <img onLoad={this.scan.bind(this)} style={{ display: 'none' }} src={this.state.imgSrc} alt=''>
         </img>
         <p>{this.state.firstName}</p>
         <p>{this.state.lastName}</p >
@@ -90,7 +90,7 @@ class App extends Component {
           isImageMirror={false}
           isMaxResolution={true}
           isFullscreen = {false }
-          sizeFactor = {0.5}
+          sizeFactor = {0.3}
           idealResolution = {{width: 1024, height: 720}}
           onTakePhoto={(dataUri) => this.handleTakePhoto(dataUri)
           }/>
