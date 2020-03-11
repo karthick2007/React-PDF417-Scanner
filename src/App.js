@@ -76,7 +76,7 @@ class App extends Component {
         </div>
         <input type="file" id="myFile" onChange={this.handleFiles.bind(this)}></input>
         <label id="error" style={{ display: "none" }}></label>
-        <img onLoad={this.scan.bind(this)} style={{ display: 'none' }} src={this.state.imgSrc} alt=''>
+        <img onLoad={this.scan.bind(this)} style={{ display: 'block' }} src={this.state.imgSrc} alt=''>
         </img>
         <p>{this.state.firstName}</p>
         <p>{this.state.lastName}</p >
