@@ -80,9 +80,9 @@ class App extends Component {
         </img>
         <p>{this.state.firstName}</p>
         <p>{this.state.lastName}</p >
-        <div style={{ position: 'relative',display: 'flex', justifyContent: 'center', alignItems: 'flex-start',width:'90%',height: '50vh' }}>
+        <div style={{ position: 'relative',display: 'flex', justifyContent: 'center', alignItems: 'center',width:'90%',height: '50vh','max-width': '768px' }}>
         <svg style={{position: 'absolute', zIndex: '9999', width: '95%',height: '125', justifyContent: 'center'}}>
-           <rect style={{ width: '100%',height: '80%', fill:'none', 'stroke-width': '15' , stroke: 'grey' }}/>
+           <rect style={{ width: '100%',height: '80%', fill:'none', 'stroke-width': '10' , stroke: 'grey' }}/>
          </svg>
          <Camera style={{ position: 'absolute',width:'50%',opacity : '50%' }}
 
